@@ -91,3 +91,24 @@ export async function PATCH(req,{ params }){
 
     }
 }
+
+export async function DELETE(req,{ params }){
+    const { id } = await params;
+
+ try {
+    if (!id) {
+        return Response.json({message : "Id not Found"},{status : 404});
+    }
+
+    const task = await Tasks.findOneAndDelete({id: id});
+    if (!task) {
+        return Response.json({message : "Task With this Id Not Found"} ,{status : 404});
+    }
+
+    return Response.json({message : "Task Successfully Deleted"} ,{status : 200});
+
+ } catch (error) {
+     return Response.json({message : "Error Deleting Task"} ,{status : 500});
+
+ }   
+}

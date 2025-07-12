@@ -1,10 +1,26 @@
 import Tasks from "@/models/TaskSchema";
 import dbConnect from "@/dbConnect";
 
-export async function GET() {
+export async function GET(req) {
+  const { searchParams } = new URL(req.url);
+  const status = searchParams.get("status");
+  const priority = searchParams.get("priority");
+
+  const query = {};
+  if(status) query.status = status;
+  if(priority) query.priority = priority
+
+  console.log(query);
+  
+
+  
        try {
           await dbConnect();
-          const task = await Tasks.find();
+          let task = await Tasks.find(query);
+       
+          
+
+
            return Response.json({message : "Task Fetch Successfully",
             task : task
            } , {status : 200} )
