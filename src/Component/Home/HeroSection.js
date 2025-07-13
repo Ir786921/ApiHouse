@@ -117,11 +117,11 @@ const HeroSection = () => {
               </div>
               
               <div className="bg-slate-900/80 rounded-lg p-4 font-mono text-sm">
-                <div className="text-green-400 mb-2">// GET /api/tasks</div>
+                <div className="text-green-400 mb-2">GET /api/tasks</div>
                 <div className="text-white/80">
                   <span className="text-blue-400">fetch</span>
                   <span className="text-white/60">(</span>
-                  <span className="text-orange-400">'https://api.house.com/tasks'</span>
+                  <span className="text-orange-400">https://api.house.com/tasks</span>
                   <span className="text-white/60">)</span>
                 </div>
                 <div className="text-white/80 ml-2">

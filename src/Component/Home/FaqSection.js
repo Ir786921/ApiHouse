@@ -128,9 +128,10 @@ const FaqComponent = () => {
             Frequently Asked Questions
           </h2>
           
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Everything you need to know about using our API service. Can't find what you're looking for? Feel free to reach out!
-          </p>
+         <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+  Everything you need to know about using our API service. Can&apos;t find what you&apos;re looking for? Feel free to reach out!
+</p>
+
         </div>
 
         {/* FAQ Items */}
@@ -150,9 +151,10 @@ const FaqComponent = () => {
         <div className={`text-center mt-16 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-800 delay-600`}>
           <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-8 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-4">Still Have Questions?</h3>
-            <p className="text-gray-300 mb-6">
-              Our team is here to help! Reach out and we'll get back to you as soon as possible.
-            </p>
+          <p className="text-gray-300 mb-6">
+  Our team is here to help! Reach out and we&apos;ll get back to you as soon as possible.
+</p>
+
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href={"https://mail.google.com/"} className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-blue-500 px-6 py-3 rounded-lg hover:from-purple-600 hover:to-blue-600 transition-all duration-300 hover:scale-105 hover:shadow-lg text-white font-medium">
