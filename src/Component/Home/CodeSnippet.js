@@ -148,7 +148,7 @@ const ApiUsageExamples = () => {
       code: `// Modern async approach
 async function getTasks() {
   try {
-    const response = await fetch("https://api.apihouse.com/tasks");
+    const response = await fetch("https://api-house-delta.vercel.app/tasks");
     const tasks = await response.json();
     return tasks;
   } catch (error) {
@@ -159,7 +159,7 @@ async function getTasks() {
 // Get specific task
 async function getTask(id) {
   try {
-    const response = await fetch(\`https://api.apihouse.com/tasks/\${id}\`);
+    const response = await fetch(\`https://api-house-delta.vercel.app/tasks/\${id}\`);
     const task = await response.json();
     return task;
   } catch (error) {
@@ -185,7 +185,7 @@ function useTasks() {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await fetch("https://api.apihouse.com/tasks");
+        const response = await fetch("https://api-house-delta.vercel.app/tasks");
         if (!response.ok) throw new Error('Failed to fetch');
         const data = await response.json();
         setTasks(data);
@@ -205,7 +205,7 @@ function useTasks() {
   const endpoints = [
     {
       title: "Tasks",
-      url: "https://api.apihouse.com/tasks",
+      url: "https://api-house-delta.vercel.app/tasks",
       method: "GET",
       icon: CheckSquare,
       description: "Get all tasks or specific task by ID",
@@ -213,7 +213,7 @@ function useTasks() {
     },
     {
       title: "Users",
-      url: "https://api.apihouse.com/users",
+      url: "https://api-house-delta.vercel.app/users",
       method: "GET",
       icon: Users,
       description: "Coming soon - User data endpoints",
@@ -221,7 +221,7 @@ function useTasks() {
     },
     {
       title: "Products",
-      url: "https://api.apihouse.com/products",
+      url: "https://api-house-delta.vercel.app/products",
       method: "GET",
       icon: Package,
       description: "Coming soon - Product data endpoints",
@@ -229,7 +229,7 @@ function useTasks() {
     },
     {
       title: "Posts",
-      url: "https://api.apihouse.com/posts",
+      url: "https://api-house-delta.vercel.app/posts",
       method: "GET",
       icon: Database,
       description: "Coming soon - Post data endpoints",
@@ -251,7 +251,7 @@ function useTasks() {
         <div className={`text-center mb-16 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-800`}>
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 mb-6">
             <Code className="w-4 h-4 text-purple-400" />
-            <span className="text-sm text-purple-300 font-medium">Quick Integration</span>
+            <span className="text-sm text-yellow-300 font-medium">Quick Integration</span>
           </div>
           
           <h2 className="text-5xl font-bold text-white mb-6 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">

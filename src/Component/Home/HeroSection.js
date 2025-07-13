@@ -1,4 +1,5 @@
 import { Rocket, Code, Zap, Shield, Users, ArrowRight, CheckCircle, Star } from 'lucide-react';
+import Link from 'next/link';
 import React from 'react';
 
 const HeroSection = () => {
@@ -47,59 +48,17 @@ const HeroSection = () => {
               and comprehensive documentation.
             </p>
 
-            {/* Feature highlights */}
-            {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div className="bg-gradient-to-br from-green-400 to-emerald-500 w-10 h-10 rounded-lg flex items-center justify-center mb-3">
-                  <CheckCircle className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-white font-semibold mb-1">Instant Access</h3>
-                <p className="text-white/70 text-sm">No authentication needed</p>
-              </div>
-              
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div className="bg-gradient-to-br from-blue-400 to-cyan-500 w-10 h-10 rounded-lg flex items-center justify-center mb-3">
-                  <Zap className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-white font-semibold mb-1">Lightning Fast</h3>
-                <p className="text-white/70 text-sm">Optimized for performance</p>
-              </div>
-              
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div className="bg-gradient-to-br from-orange-400 to-red-500 w-10 h-10 rounded-lg flex items-center justify-center mb-3">
-                  <Shield className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-white font-semibold mb-1">Always Online</h3>
-                <p className="text-white/70 text-sm">99.9% uptime guarantee</p>
-              </div>
-            </div> */}
+            
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="group bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center">
-                Get Started
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+             
+              <Link href={"/docs"} className="border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
                 View Endpoints
-              </button>
+              </Link>
             </div>
 
-            {/* Social proof */}
-            {/* <div className="mt-12 flex items-center justify-center lg:justify-start space-x-8">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white">50K+</div>
-                <div className="text-white/60 text-sm">API Calls Daily</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white">99.9%</div>
-                <div className="text-white/60 text-sm">Uptime</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white">10+</div>
-                <div className="text-white/60 text-sm">Endpoints</div>
-              </div>
-            </div> */}
+         
           </div>
 
           {/* Right Content - Code Preview */}
@@ -121,7 +80,7 @@ const HeroSection = () => {
                 <div className="text-white/80">
                   <span className="text-blue-400">fetch</span>
                   <span className="text-white/60">(</span>
-                  <span className="text-orange-400">https://api.house.com/tasks</span>
+                  <span className="text-orange-400">https://api-house-delta.vercel.app/tasks</span>
                   <span className="text-white/60">)</span>
                 </div>
                 <div className="text-white/80 ml-2">

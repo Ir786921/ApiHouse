@@ -124,7 +124,7 @@ const ApiFeaturesSection = () => {
         {/* Header */}
         <div className={`text-center mb-16 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-800`}>
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 mb-6">
-            <Sparkles className="w-4 h-4 text-purple-400" />
+            <Sparkles className="w-4 h-4 text-yellow-400" />
             <span className="text-sm text-purple-300 font-medium">Why Choose Our API?</span>
           </div>
           

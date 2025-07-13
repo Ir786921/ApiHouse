@@ -86,7 +86,7 @@ const FaqComponent = () => {
     },
     {
       question: "What data types and endpoints are currently available?",
-      answer: "Currently, we offer the Tasks endpoint (https://api.apihouse.com/tasks) with mock task data. We're actively working on adding Users, Products, and Posts endpoints. Each endpoint provides realistic JSON data perfect for testing and development.",
+      answer: "Currently, we offer the Tasks endpoint (https://api-house-delta.vercel.app/tasks) with mock task data. We're actively working on adding Users, Products, and Posts endpoints. Each endpoint provides realistic JSON data perfect for testing and development.",
       icon: Globe
     },
     {
@@ -121,7 +121,7 @@ const FaqComponent = () => {
         <div className={`text-center mb-16 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-800`}>
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 mb-6">
             <HelpCircle className="w-4 h-4 text-purple-400" />
-            <span className="text-sm text-purple-300 font-medium">Got Questions?</span>
+            <span className="text-sm text-yellow-300 font-medium">Got Questions?</span>
           </div>
           
           <h2 className="text-5xl font-bold text-white mb-6 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
