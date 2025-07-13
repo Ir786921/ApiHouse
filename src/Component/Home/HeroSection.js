@@ -80,7 +80,7 @@ const HeroSection = () => {
                 <div className="text-white/80">
                   <span className="text-blue-400">fetch</span>
                   <span className="text-white/60">(</span>
-                  <span className="text-orange-400">https://api-house-delta.vercel.app/tasks</span>
+                  <span className="text-orange-400">https://api-house-delta.vercel.app/api/tasks</span>
                   <span className="text-white/60">)</span>
                 </div>
                 <div className="text-white/80 ml-2">

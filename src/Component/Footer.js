@@ -113,7 +113,7 @@ const FooterComponent = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {/* API Resources */}
           <FooterSection title="API Resources" delay={100}>
-            <FooterLink href="https://api.apihouse.com/tasks" icon={Database}>
+            <FooterLink href="https://api-house-delta.vercel.app/api/tasks" icon={Database}>
               Tasks Endpoint
             </FooterLink>
             <FooterLink href="/docs" icon={BookOpen}>
