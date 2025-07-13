@@ -97,13 +97,8 @@ const Navbar = () => {
               </a>
 
               <div className="flex items-center justify-between px-3 py-2">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-sm text-green-700 font-medium">API Online</span>
-                </div>
-                <button className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-4 py-1 rounded-lg font-medium text-sm">
-                  Get Started
-                </button>
+               
+              
               </div>
             </div>
           </div>

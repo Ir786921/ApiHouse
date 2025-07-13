@@ -10,6 +10,7 @@ import {
   CheckCircle,
   Sparkles
 } from 'lucide-react';
+import Link from 'next/link';
 
 const FeatureCard = ({ icon: Icon, title, description, delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -153,7 +154,7 @@ const ApiFeaturesSection = () => {
         {/* Bottom CTA */}
         <div className={`text-center mt-16 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-800 delay-700`}>
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-blue-500 px-8 py-4 rounded-full hover:from-purple-600 hover:to-blue-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 cursor-pointer group">
-            <span className="text-white font-semibold">Get Started Now</span>
+            <Link  href = {"/docs"}className="text-white font-semibold">Get Started Now </Link>
             <Zap className="w-5 h-5 text-white group-hover:rotate-12 transition-transform duration-300" />
           </div>
         </div>

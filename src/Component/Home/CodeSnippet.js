@@ -264,7 +264,7 @@ function useTasks() {
         </div>
 
         {/* Available Endpoints */}
-        <div className={`mb-16 w-5xl mx-auto ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-800 delay-300`}>
+        <div className={`mb-16 md:w-5xl mx-auto ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-800 delay-300`}>
           <h3 className="text-2xl justify-center font-bold text-white mb-8 flex items-center gap-3">
             <Globe className="w-6 h-6 text-purple-400" />
             Available Endpoints
