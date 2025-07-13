@@ -234,9 +234,9 @@ const APIDocumentation = () => {
 
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex gap-8">
+        <div className="flex md:flex-row flex-col gap-8">
           {/* Sidebar */}
-          <div className="w-80 flex-shrink-0">
+          <div className="md:w-80 w-full flex-shrink-0">
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
               <div className="p-4 bg-gradient-to-r from-purple-50 to-indigo-50 border-b border-gray-200">
                 <h2 className="text-lg font-semibold text-gray-900">API Collections</h2>
