@@ -148,7 +148,7 @@ const ApiUsageExamples = () => {
       code: `// Modern async approach
 async function getTasks() {
   try {
-    const response = await fetch("https://api-house-delta.vercel.app/tasks");
+    const response = await fetch("https://api-house-delta.vercel.app/api/tasks");
     const tasks = await response.json();
     return tasks;
   } catch (error) {
@@ -159,7 +159,7 @@ async function getTasks() {
 // Get specific task
 async function getTask(id) {
   try {
-    const response = await fetch(\`https://api-house-delta.vercel.app/tasks/\${id}\`);
+    const response = await fetch(\`https://api-house-delta.vercel.app/api/tasks/\${id}\`);
     const task = await response.json();
     return task;
   } catch (error) {
@@ -185,7 +185,7 @@ function useTasks() {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await fetch("https://api-house-delta.vercel.app/tasks");
+        const response = await fetch("https://api-house-delta.vercel.app/api/tasks");
         if (!response.ok) throw new Error('Failed to fetch');
         const data = await response.json();
         setTasks(data);
@@ -205,7 +205,7 @@ function useTasks() {
   const endpoints = [
     {
       title: "Tasks",
-      url: "https://api-house-delta.vercel.app/tasks",
+      url: "https://api-house-delta.vercel.app/api/tasks",
       method: "GET",
       icon: CheckSquare,
       description: "Get all tasks or specific task by ID",
@@ -213,7 +213,7 @@ function useTasks() {
     },
     {
       title: "Users",
-      url: "https://api-house-delta.vercel.app/users",
+      url: "https://api-house-delta.vercel.app/api/users",
       method: "GET",
       icon: Users,
       description: "Coming soon - User data endpoints",
@@ -221,7 +221,7 @@ function useTasks() {
     },
     {
       title: "Products",
-      url: "https://api-house-delta.vercel.app/products",
+      url: "https://api-house-delta.vercel.app/api/products",
       method: "GET",
       icon: Package,
       description: "Coming soon - Product data endpoints",
@@ -229,7 +229,7 @@ function useTasks() {
     },
     {
       title: "Posts",
-      url: "https://api-house-delta.vercel.app/posts",
+      url: "https://api-house-delta.vercel.app/api/posts",
       method: "GET",
       icon: Database,
       description: "Coming soon - Post data endpoints",

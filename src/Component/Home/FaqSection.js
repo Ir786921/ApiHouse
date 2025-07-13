@@ -86,7 +86,7 @@ const FaqComponent = () => {
     },
     {
       question: "What data types and endpoints are currently available?",
-      answer: "Currently, we offer the Tasks endpoint (https://api-house-delta.vercel.app/tasks) with mock task data. We're actively working on adding Users, Products, and Posts endpoints. Each endpoint provides realistic JSON data perfect for testing and development.",
+      answer: "Currently, we offer the Tasks endpoint (https://api-house-delta.vercel.app/api/tasks) with mock task data. We're actively working on adding Users, Products, and Posts endpoints. Each endpoint provides realistic JSON data perfect for testing and development.",
       icon: Globe
     },
     {

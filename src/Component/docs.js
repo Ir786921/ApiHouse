@@ -35,7 +35,7 @@ const APIDocumentation = () => {
       method: 'GET',
       title: 'Get All Tasks',
       description: 'Retrieve all tasks from the collection with optional pagination',
-      url: `https://api-house-delta.vercel.app/${activeAPI}`,
+      url: `https://api-house-delta.vercel.app/api/${activeAPI}`,
       queryParams: ['status','priority'],
       response: {
         status: 200,
@@ -69,7 +69,7 @@ const APIDocumentation = () => {
       method: 'GET',
       title: 'Get Tasks by ID',
       description: 'Retrieve a specific tasks by its unique identifier',
-      url: `https://api-house-delta.vercel.app/${activeAPI}/{id}`,
+      url: `https://api-house-delta.vercel.app/api/${activeAPI}/{id}`,
       pathParams: ['id'],
       response: {
         status: 200,
@@ -92,7 +92,7 @@ const APIDocumentation = () => {
       method: 'GET',
       title: 'Get Tasks by Query',
       description: 'Search and filter Tasks using query parameters',
-      url: `https://api-house-delta.vercel.app/${activeAPI}?status=compleated&priority=high`,
+      url: `https://api-house-delta.vercel.app/api/${activeAPI}?status=compleated&priority=high`,
       queryParams: ['status','priority'],
       response: {
         status: 200,
@@ -120,7 +120,7 @@ const APIDocumentation = () => {
       method: 'POST',
       title: 'Create New Tasks',
       description: 'Create a new Tasks in the collection',
-      url: `https://api-house-delta.vercel.app/${activeAPI}`,
+      url: `https://api-house-delta.vercel.app/api/${activeAPI}`,
       requestBody: `  {
     "id": 10,
     "name": "Prepare dinner",
@@ -147,7 +147,7 @@ const APIDocumentation = () => {
       method: 'PATCH',
       title: 'Partially Update Tasks',
       description: 'Update specific fields of an existing Tasks',
-      url: `https://api-house-delta.vercel.app/${activeAPI}/{id}`,
+      url: `https://api-house-delta.vercel.app/api/${activeAPI}/{id}`,
       pathParams: ['id'],
       requestBody: `{
     "status": "incomplete",
@@ -172,7 +172,7 @@ const APIDocumentation = () => {
       method: 'PUT',
       title: 'Replace Taks',
       description: 'Replace an entire Tasks with new data',
-      url: `https://api-house-delta.vercel.app/${activeAPI}/{id}`,
+      url: `https://api-house-delta.vercel.app/api/${activeAPI}/{id}`,
       pathParams: ['id'],
       requestBody: `{
             "id": 2,
@@ -200,7 +200,7 @@ const APIDocumentation = () => {
       method: 'DELETE',
       title: 'Delete Tasks',
       description: 'Remove an Tasks from the collection',
-      url: `https://api-house-delta.vercel.app/${activeAPI}/{id}`,
+      url: `https://api-house-delta.vercel.app/api/${activeAPI}/{id}`,
       pathParams: ['id'],
       response: {
         status: 204,
