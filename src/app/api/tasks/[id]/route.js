@@ -1,114 +1,116 @@
 import dbConnect from "@/dbConnect";
 import Tasks from "@/models/TaskSchema";
+import { NextResponse } from "next/server";
 
 export async function GET(req, { params }) {
   const { id } = await params;
-  console.log(id);
-  
-  
-   try {
+
+  try {
     await dbConnect();
 
     if (!id) {
-        return Response.json({message:"Id not Found"},
-            {status:404}
-        )
+      return NextResponse.json(
+        { message: "Id not Found" },
+        { status: 404 }
+      );
     }
 
-    const task = await Tasks.findOne({id : id});
-    console.log(task);
-    
-
-    if(!task){
-        return Response.json({message : `Task with ${id} does not Exit`},
-            {status : 404}
-        )
-    }
-
-    return Response.json({message : `Task with ${id} fetch Sucessfully` , task},
-       
-        {status:200}
-    )
-
-
-    
-   } catch (error) {
-     return Response.json({message : `Error Fetching Task with ${id} ` + error},
-        {status:500}
-    )
-   }
-}
-
-export async function PATCH(req,{ params }){
-    const updatePart =  await req.json();
-    console.log(updatePart);
-    
-    const{ id } = await  params;
-    console.log(id);
-    
-    try {
-        await dbConnect();
-        if (!id) {
-        return Response.json({message:"Id not Found"},
-            {status:404}
-        )
-    }
-
-       if (!updatePart) {
-        return Response.json({message:"Part to be Updated Required"},
-            {status:404}
-        )
-    }
-
-      const task =  await Tasks.findOne({id:id});
-
-     
-
-      
-      
-
-       if(!task){
-        return Response.json({message : `Task with ${id} does not Exit`},
-            {status : 404}
-        )
-
-
-    
-    }
-
-     task[Object.keys(updatePart)[0]] = Object.values(updatePart)[0];
-      
-     await task.save();
-    
-    return Response.json({message: "Task Updated Successfully" , task}, {status : 200})
-
-
-
-
-        
-    } catch (error) {
-        return Response.json({message : `Error Updating Task with ${id} ` + error },{status : 500});
-
-    }
-}
-
-export async function DELETE(req,{ params }){
-    const { id } = await params;
-
- try {
-    if (!id) {
-        return Response.json({message : "Id not Found"},{status : 404});
-    }
-
-    const task = await Tasks.findOneAndDelete({id: id});
+    const task = await Tasks.findOne({ id });
     if (!task) {
-        return Response.json({message : "Task With this Id Not Found"} ,{status : 404});
+      return NextResponse.json(
+        { message: `Task with ${id} does not exist` },
+        { status: 404 }
+      );
     }
 
-    return Response.json({message : "Task Successfully Deleted"} ,{status : 200});
+    return NextResponse.json(
+      { message: `Task with ${id} fetched successfully`, task },
+      { status: 200 }
+    );
+  } catch (error) {
+    return NextResponse.json(
+      { message: `Error fetching Task with ${id}`, error: error.message },
+      { status: 500 }
+    );
+  }
+}
 
- } catch (error) {
-     return Response.json({message : "Error Deleting Task"} ,{status : 500});
+export async function PATCH(req, { params }) {
+  const updatePart = await req.json();
+  const { id } = await  params;
 
- }   
+  try {
+    await dbConnect();
+
+    if (!id) {
+      return NextResponse.json(
+        { message: "Id not Found" },
+        { status: 404 }
+      );
+    }
+
+    if (!updatePart) {
+      return NextResponse.json(
+        { message: "Part to be updated is required" },
+        { status: 400 }
+      );
+    }
+
+    const task = await Tasks.findOne({ id });
+
+    if (!task) {
+      return NextResponse.json(
+        { message: `Task with ${id} does not exist` },
+        { status: 404 }
+      );
+    }
+
+    
+    task[Object.keys(updatePart)[0]] = Object.values(updatePart)[0];
+    await task.save();
+
+    return NextResponse.json(
+      { message: "Task updated successfully", task },
+      { status: 200 }
+    );
+  } catch (error) {
+    return NextResponse.json(
+      { message: `Error updating task with ${id}`, error: error.message },
+      { status: 500 }
+    );
+  }
+}
+
+export async function DELETE(req, { params }) {
+  const { id } = await params;
+
+  try {
+    await dbConnect();
+
+    if (!id) {
+      return NextResponse.json(
+        { message: "Id not Found" },
+        { status: 404 }
+      );
+    }
+
+    const task = await Tasks.findOneAndDelete({ id });
+
+    if (!task) {
+      return NextResponse.json(
+        { message: `Task with id ${id} not found` },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json(
+      { message: "Task successfully deleted" },
+      { status: 200 }
+    );
+  } catch (error) {
+    return NextResponse.json(
+      { message: "Error deleting task", error: error.message },
+      { status: 500 }
+    );
+  }
 }

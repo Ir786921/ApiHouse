@@ -1,5 +1,8 @@
+// app/api/tasks/route.js
+
 import Tasks from "@/models/TaskSchema";
 import dbConnect from "@/dbConnect";
+import { NextResponse } from "next/server";
 
 export async function GET(req) {
   const { searchParams } = new URL(req.url);
@@ -7,51 +10,46 @@ export async function GET(req) {
   const priority = searchParams.get("priority");
 
   const query = {};
-  if(status) query.status = status;
-  if(priority) query.priority = priority
+  if (status) query.status = status;
+  if (priority) query.priority = priority;
 
-  console.log(query);
-  
-
-  
-       try {
-          await dbConnect();
-          let task = await Tasks.find(query);
-       
-          
-
-
-           return Response.json({message : "Task Fetch Successfully",
-            task : task
-           } , {status : 200} )
-       } catch (error) {
-        return Response.json({meassage : "Error Fetching  Task"} , {status : 500 });
-       }
+  try {
+    await dbConnect();
+    const task = await Tasks.find(query);
+    return NextResponse.json(
+      { message: "Tasks fetched successfully", task },
+      { status: 200 }
+    );
+  } catch (error) {
+    return NextResponse.json(
+      { message: "Error fetching tasks", error: error.message },
+      { status: 500 }
+    );
+  }
 }
 
 export async function POST(req) {
   try {
     await dbConnect();
 
-    const data = await req.json(); 
+    const data = await req.json();
     if (!data) {
-      return Response.json({ message: "Body not found" }, { status: 400 });
+      return NextResponse.json({ message: "Body not found" }, { status: 400 });
     }
 
-    const existing = await Tasks.findOne({ id: data.id }); 
+    const existing = await Tasks.findOne({ id: data.id });
     if (existing) {
-      return Response.json({ message: "Task already exists" }, { status: 409 });
+      return NextResponse.json({ message: "Task already exists" }, { status: 409 });
     }
 
     const newTask = new Tasks(data);
     await newTask.save();
 
-    return Response.json({ message: "Task created successfully" }, { status: 201 });
+    return NextResponse.json({ message: "Task created successfully" }, { status: 201 });
   } catch (err) {
-    return Response.json(
-      { message: "Error creating new task", error: err.message },
+    return NextResponse.json(
+      { message: "Error creating task", error: err.message },
       { status: 500 }
     );
   }
 }
-
